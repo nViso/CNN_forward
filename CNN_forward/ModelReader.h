@@ -21,15 +21,15 @@ public:
 
 class Model{
 public:
-	Model(std::string path);//直接加载指定路径的Model
-	Model(std::string path,std::string key);//解密并加载Model
+	Model(std::string path);//directly load path to Model
+	Model(std::string path,std::string key);//decrypt and then load to Model
 	Model();
 	void load(std::string model_path);
 	void load(std::string model_path,std::string key);
-	std::vector<std::vector<cv::Mat>> get_weight(std::string layer_name);//返回指定名称的卷积层的Weight
-	cv::Mat get_bias(std::string layer_name);//返回指定名称的层的bias
-	std::vector<std::vector<cv::Mat>> Model::get_fc_weight(std::string layer_name);//返回指定名称的全连接层的Weight
-	std::vector<int> Model::get_dim(std::string layer_name);//返回指定名称的层的dim
+	std::vector<std::vector<cv::Mat>> get_weight(std::string layer_name);//return Weight of corresponding convolutional layer
+	cv::Mat get_bias(std::string layer_name);//穜eturn Bias of corresponding convolutional layer
+	std::vector<std::vector<cv::Mat>> Model::get_fc_weight(std::string layer_name);//return Weight of corresponding fully connect layer
+	std::vector<int> Model::get_dim(std::string layer_name);//穜eturn dimension of corresponding layer
 private:
 	std::vector<DataBlock*> data;
 };

@@ -34,11 +34,11 @@ void Model::load(std::string model_path){
 	if (!modelfile){
 		exit(1);
 	}
-	char cname[17];//存储层名
+	char cname[17];//store layer name
 
 	while (modelfile.read(cname, 16*sizeof(char))){
-		DataBlock* layer_data = new DataBlock();//每读一层的数据创建一个DataBlock存储读入的数据
-		cname[16] = '\0'; //防止溢出
+		DataBlock* layer_data = new DataBlock();//read each layer, store data to DataBlock
+		cname[16] = '\0'; //穚revent overflow
 		layer_data->name = string(cname);
 		char type;
 		modelfile.read(&type, sizeof(char));
@@ -48,20 +48,20 @@ void Model::load(std::string model_path){
 		}
 		int data_size;
 		modelfile.read((char*)&data_size, sizeof(int));
-		while (data_size){//读入长度，如果长度不为0则读取该长度的数据
-			vector<char> original_data;//每次读取数据创建一个vec存储数据
+		while (data_size){//read size, if not 0 then read the data
+			vector<char> original_data;//make a vector to store the data after reading the data
 			for (int i = 0; i < data_size*4; i++){
 				char x;
-				modelfile.read(&x, sizeof(char));//循环读入数据
+				modelfile.read(&x, sizeof(char));//iterate reading data
 				original_data.push_back(x);
 			}
 			layer_data->data_vec.push_back(original_data);
 			char* buf = new char[sizeof(char)*original_data.size()+1];
-			std::copy(original_data.begin(), original_data.end(), buf);//转换为char*数组
+			std::copy(original_data.begin(), original_data.end(), buf);// transfer to char* array
 			layer_data->data_bin.push_back(buf);
 			modelfile.read((char*)&data_size, sizeof(int));
 		}
-		this->data.push_back(layer_data);//将创建的DataBlock加入Model的data
+		this->data.push_back(layer_data);//add Datablock to model
 		
 	}
 }
@@ -72,9 +72,9 @@ void Model::load(std::string model_path, std::string key){
 	for (vector<DataBlock*>::iterator x = this->data.begin(); x != this->data.end(); x++){
 		(*x)->data_bin.clear();
 		for (vector<vector<char>>::iterator y = (*x)->data_vec.begin(); y != (*x)->data_vec.end(); y++){
-			(*y) = bf.Decrypt(*y);//对每个层中的每个数据块解密
+			(*y) = bf.Decrypt(*y);// decrypt each Datablock
 			char* buf = new char[sizeof(char)*(*y).size() + 1];
-			std::copy((*y).begin(), (*y).end(), buf);//转换为char*数组
+			std::copy((*y).begin(), (*y).end(), buf);//transfer to char* array
 			(*x)->data_bin.push_back(buf);
 		}
 	}
