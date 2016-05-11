@@ -1,17 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
       <Configuration>Debug</Configuration>
       <Platform>Win32</Platform>
     </ProjectConfiguration>
-    <ProjectConfiguration Include="Debug|x64">
-      <Configuration>Debug</Configuration>
-      <Platform>x64</Platform>
-    </ProjectConfiguration>
     <ProjectConfiguration Include="Release|Win32">
       <Configuration>Release</Configuration>
       <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
     </ProjectConfiguration>
     <ProjectConfiguration Include="Release|x64">
       <Configuration>Release</Configuration>
@@ -19,157 +19,177 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{97CF7719-7EBF-41A5-B99B-27842F02D36C}</ProjectGuid>
+    <ProjectGuid>{9204CFB5-29E7-4AD9-8726-850D09F9D4AD}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
     <RootNamespace>CNN_forward</RootNamespace>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+    <ProjectName>CNN_forward_v14</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v120</PlatformToolset>
-    <CharacterSet>MultiByte</CharacterSet>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
-    <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v120</PlatformToolset>
-    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v120_xp</PlatformToolset>
+    <PlatformToolset>v140</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
-    <CharacterSet>MultiByte</CharacterSet>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v120</PlatformToolset>
+    <PlatformToolset>v140</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
-    <CharacterSet>MultiByte</CharacterSet>
+    <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
   </ImportGroup>
-  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  <ImportGroup Label="Shared">
   </ImportGroup>
-  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
-  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);D:\Program Files\opencv\build\include;D:\Program Files\tbb\include;</IncludePath>
-    <LibraryPath>$(VC_LibraryPath_x86);$(WindowsSDK_LibraryPath_x86);D:\Program Files\opencv\build\x86\vc12\staticlib;D:\Program Files\tbb\lib\ia32\vc12</LibraryPath>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);D:\Program Files\opencv\build\include;D:\Program Files\tbb\include;</IncludePath>
-    <LibraryPath>$(VC_LibraryPath_x64);$(WindowsSDK_LibraryPath_x64);D:\Program Files\opencv\build\x64\vc12\staticlib;D:\Program Files\tbb\lib\intel64\vc12</LibraryPath>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);D:\Program Files\opencv\build\include;D:\Program Files\tbb\include;C:\Program Files (x86)\Visual Leak Detector\include;</IncludePath>
-    <LibraryPath>$(VC_LibraryPath_x64);$(WindowsSDK_LibraryPath_x64);D:\Program Files\opencv\build\x64\vc12\staticlib;D:\Program Files\tbb\lib\intel64\vc12;C:\Program Files (x86)\Visual Leak Detector\lib\Win64;</LibraryPath>
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_SCL_SECURE_NO_WARNINGS;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>D:\workspace\projects\tempFiles\opencv\build\include;D:\workspace\github\CNN_forward\CNN_forward;D:\workspace\projects\tempFiles\tbb44_20160128oss\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
+      <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>D:\workspace\projects\tempFiles\tbb44_20160128oss\lib\intel64\vc14;D:\workspace\projects\tempFiles\tbb44_20160128oss\lib\intel64\vc14;D:\workspace\projects\tempFiles\opencv\build\x86\vc14\lib\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>opencv_calib3d2411d.lib;opencv_contrib2411d.lib;opencv_core2411d.lib;opencv_features2d2411d.lib;opencv_flann2411d.lib;opencv_gpu2411d.lib;opencv_haartraining_engined.lib;opencv_highgui2411d.lib;opencv_imgproc2411d.lib;opencv_legacy2411d.lib;opencv_ml2411d.lib;opencv_nonfree2411d.lib;opencv_objdetect2411d.lib;opencv_ocl2411d.lib;opencv_photo2411d.lib;opencv_stitching2411d.lib;opencv_superres2411d.lib;opencv_ts2411d.lib;opencv_video2411d.lib;opencv_videostab2411d.lib;%(AdditionalDependencies);tbb.lib;tbbmalloc.lib;tbbmalloc_debug.lib;tbbmalloc_debug_s.lib;tbbmalloc_proxy.lib;tbbmalloc_proxy_debug.lib;tbbmalloc_s.lib;tbbproxy.lib;tbbproxy_debug.lib;tbb_debug.lib;tbb_preview.lib;tbb_preview_debug.lib</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
     </ClCompile>
     <Link>
+      <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>tbb.lib;vfw32.lib;comctl32.lib;zlib.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;libjasper.lib;libjpeg.lib;libpng.lib;libtiff.lib;IlmImf.lib;opencv_core2410.lib;opencv_imgproc2410.lib;opencv_highgui2410.lib;opencv_ml2410.lib;opencv_video2410.lib;opencv_features2d2410.lib;opencv_calib3d2410.lib;opencv_objdetect2410.lib;opencv_contrib2410.lib;opencv_legacy2410.lib;opencv_flann2410.lib</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
-      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>Disabled</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;_SCL_SECURE_NO_WARNINGS;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
-      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
-      <BrowseInformation>true</BrowseInformation>
-      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\workspace\projects\tempFiles\opencv\build\include;D:\workspace\github\CNN_forward\CNN_forward;D:\workspace\projects\tempFiles\tbb44_20160128oss\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
-      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalDependencies>tbb.lib;vfw32.lib;comctl32.lib;zlib.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;libjasper.lib;libjpeg.lib;libpng.lib;libtiff.lib;IlmImf.lib;opencv_core2410.lib;opencv_imgproc2410.lib;opencv_highgui2410.lib;opencv_ml2410.lib;opencv_video2410.lib;opencv_features2d2410.lib;opencv_calib3d2410.lib;opencv_objdetect2410.lib;opencv_contrib2410.lib;opencv_legacy2410.lib;opencv_flann2410.lib</AdditionalDependencies>
-      <Profile>true</Profile>
-      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>D:\workspace\projects\tempFiles\tbb44_20160128oss\lib\intel64\vc14;D:\workspace\projects\tempFiles\opencv\build\x86\vc14\lib\Release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>opencv_calib3d2411.lib;opencv_contrib2411.lib;opencv_core2411.lib;opencv_features2d2411.lib;opencv_flann2411.lib;opencv_gpu2411.lib;opencv_haartraining_engine.lib;opencv_highgui2411.lib;opencv_imgproc2411.lib;opencv_legacy2411.lib;opencv_ml2411.lib;opencv_nonfree2411.lib;opencv_objdetect2411.lib;opencv_ocl2411.lib;opencv_photo2411.lib;opencv_stitching2411.lib;opencv_superres2411.lib;opencv_ts2411.lib;opencv_video2411.lib;opencv_videostab2411.lib;%(AdditionalDependencies);tbb.lib;tbbmalloc.lib;tbbmalloc_debug.lib;tbbmalloc_debug_s.lib;tbbmalloc_proxy.lib;tbbmalloc_proxy_debug.lib;tbbmalloc_s.lib;tbbproxy.lib;tbbproxy_debug.lib;tbb_debug.lib;tbb_preview.lib;tbb_preview_debug.lib</AdditionalDependencies>
     </Link>
-    <Bscmake>
-      <PreserveSbr>true</PreserveSbr>
-    </Bscmake>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
-      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
-      <BrowseInformation>true</BrowseInformation>
-      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
-      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalDependencies>tbb.lib;vfw32.lib;comctl32.lib;zlib.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;libjasper.lib;libjpeg.lib;libpng.lib;libtiff.lib;IlmImf.lib;opencv_core2410.lib;opencv_imgproc2410.lib;opencv_highgui2410.lib;opencv_ml2410.lib;opencv_video2410.lib;opencv_features2d2410.lib;opencv_calib3d2410.lib;opencv_objdetect2410.lib;opencv_contrib2410.lib;opencv_legacy2410.lib;opencv_flann2410.lib</AdditionalDependencies>
-      <Profile>true</Profile>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
-    <Bscmake>
-      <PreserveSbr>true</PreserveSbr>
-    </Bscmake>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="blowfish.h" />
-    <ClInclude Include="CnnAllLayers.h" />
-    <ClInclude Include="CnnLayer.h" />
-    <ClInclude Include="CnnNet.h" />
-    <ClInclude Include="Conv.h" />
-    <ClInclude Include="Dense.h" />
-    <ClInclude Include="Input.h" />
-    <ClInclude Include="LayerConfig.h" />
-    <ClInclude Include="ModelReader.h" />
-    <ClInclude Include="Pooling.h" />
-    <ClInclude Include="Relu.h" />
-    <ClInclude Include="utils.h" />
+    <ClCompile Include="..\..\..\..\..\github\CNN_forward\CNN_forward\blowfish.cpp" />
+    <ClCompile Include="..\..\..\..\..\github\CNN_forward\CNN_forward\CnnNet.cpp" />
+    <ClCompile Include="..\..\..\..\..\github\CNN_forward\CNN_forward\Conv.cpp" />
+    <ClCompile Include="..\..\..\..\..\github\CNN_forward\CNN_forward\Dense.cpp" />
+    <ClCompile Include="..\..\..\..\..\github\CNN_forward\CNN_forward\Input.cpp" />
+    <ClCompile Include="..\..\..\..\..\github\CNN_forward\CNN_forward\main.cpp" />
+    <ClCompile Include="..\..\..\..\..\github\CNN_forward\CNN_forward\ModelReader.cpp" />
+    <ClCompile Include="..\..\..\..\..\github\CNN_forward\CNN_forward\Pooling.cpp" />
+    <ClCompile Include="..\..\..\..\..\github\CNN_forward\CNN_forward\Relu.cpp" />
+    <ClCompile Include="..\..\..\..\..\github\CNN_forward\CNN_forward\utils.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="blowfish.cpp" />
-    <ClCompile Include="CnnNet.cpp" />
-    <ClCompile Include="Conv.cpp" />
-    <ClCompile Include="Dense.cpp" />
-    <ClCompile Include="Input.cpp" />
-    <ClCompile Include="main.cpp" />
-    <ClCompile Include="ModelReader.cpp" />
-    <ClCompile Include="Pooling.cpp" />
-    <ClCompile Include="Relu.cpp" />
-    <ClCompile Include="utils.cpp" />
+    <Image Include="..\..\..\..\..\github\CNN_forward\CNN_forward\000b58ff-4b24-4e40-b6e0-31116a546fbc.png" />
+    <Image Include="..\..\..\..\..\github\CNN_forward\CNN_forward\6.jpg" />
+    <Image Include="..\..\..\..\..\github\CNN_forward\CNN_forward\test.jpg" />
+    <Image Include="00137bc2-2112-4323-ab2d-924729667795.png" />
+    <Image Include="0021ed7d-b9ed-4344-96c8-4ad1ea9cd0ee.png" />
+    <Image Include="002e2067-401b-44bc-abfb-831aeec7f303.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\..\..\github\CNN_forward\CNN_forward\blowfish.h" />
+    <ClInclude Include="..\..\..\..\..\github\CNN_forward\CNN_forward\CnnAllLayers.h" />
+    <ClInclude Include="..\..\..\..\..\github\CNN_forward\CNN_forward\CnnLayer.h" />
+    <ClInclude Include="..\..\..\..\..\github\CNN_forward\CNN_forward\CnnNet.h" />
+    <ClInclude Include="..\..\..\..\..\github\CNN_forward\CNN_forward\Conv.h" />
+    <ClInclude Include="..\..\..\..\..\github\CNN_forward\CNN_forward\Dense.h" />
+    <ClInclude Include="..\..\..\..\..\github\CNN_forward\CNN_forward\Input.h" />
+    <ClInclude Include="..\..\..\..\..\github\CNN_forward\CNN_forward\LayerConfig.h" />
+    <ClInclude Include="..\..\..\..\..\github\CNN_forward\CNN_forward\ModelReader.h" />
+    <ClInclude Include="..\..\..\..\..\github\CNN_forward\CNN_forward\Pooling.h" />
+    <ClInclude Include="..\..\..\..\..\github\CNN_forward\CNN_forward\Relu.h" />
+    <ClInclude Include="..\..\..\..\..\github\CNN_forward\CNN_forward\utils.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\..\..\github\CNN_forward\CNN_forward\model" />
+    <None Include="..\..\..\..\..\github\CNN_forward\CNN_forward\nViso_model" />
+    <None Include="..\..\..\..\..\github\CNN_forward\CNN_forward\test_output" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

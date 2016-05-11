@@ -1,93 +1,121 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="源文件">
+    <Filter Include="Source Files">
       <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
       <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
     </Filter>
-    <Filter Include="头文件">
+    <Filter Include="Header Files">
       <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
       <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
     </Filter>
-    <Filter Include="资源文件">
+    <Filter Include="Resource Files">
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="头文件\Layers">
-      <UniqueIdentifier>{9f772578-ccb1-4a34-94d0-1689393dabec}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="源文件\Layers">
-      <UniqueIdentifier>{c152889b-48a7-48ea-af38-868b1a20d867}</UniqueIdentifier>
+    <Filter Include="CNN_forward">
+      <UniqueIdentifier>{a40566af-c28d-478e-bfd0-7fbbbdcbd148}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="CnnLayer.h">
-      <Filter>头文件</Filter>
+    <ClCompile Include="..\..\..\..\..\github\CNN_forward\CNN_forward\main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\github\CNN_forward\CNN_forward\blowfish.cpp">
+      <Filter>CNN_forward</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\github\CNN_forward\CNN_forward\CnnNet.cpp">
+      <Filter>CNN_forward</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\github\CNN_forward\CNN_forward\Conv.cpp">
+      <Filter>CNN_forward</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\github\CNN_forward\CNN_forward\Dense.cpp">
+      <Filter>CNN_forward</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\github\CNN_forward\CNN_forward\Input.cpp">
+      <Filter>CNN_forward</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\github\CNN_forward\CNN_forward\ModelReader.cpp">
+      <Filter>CNN_forward</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\github\CNN_forward\CNN_forward\Pooling.cpp">
+      <Filter>CNN_forward</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\github\CNN_forward\CNN_forward\Relu.cpp">
+      <Filter>CNN_forward</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\github\CNN_forward\CNN_forward\utils.cpp">
+      <Filter>CNN_forward</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\..\..\..\..\github\CNN_forward\CNN_forward\6.jpg">
+      <Filter>CNN_forward</Filter>
+    </Image>
+    <Image Include="..\..\..\..\..\github\CNN_forward\CNN_forward\test.jpg">
+      <Filter>CNN_forward</Filter>
+    </Image>
+    <Image Include="..\..\..\..\..\github\CNN_forward\CNN_forward\000b58ff-4b24-4e40-b6e0-31116a546fbc.png">
+      <Filter>CNN_forward</Filter>
+    </Image>
+    <Image Include="0021ed7d-b9ed-4344-96c8-4ad1ea9cd0ee.png">
+      <Filter>CNN_forward</Filter>
+    </Image>
+    <Image Include="00137bc2-2112-4323-ab2d-924729667795.png">
+      <Filter>CNN_forward</Filter>
+    </Image>
+    <Image Include="002e2067-401b-44bc-abfb-831aeec7f303.png">
+      <Filter>CNN_forward</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\..\..\github\CNN_forward\CNN_forward\blowfish.h">
+      <Filter>CNN_forward</Filter>
     </ClInclude>
-    <ClInclude Include="blowfish.h">
-      <Filter>头文件</Filter>
+    <ClInclude Include="..\..\..\..\..\github\CNN_forward\CNN_forward\CnnAllLayers.h">
+      <Filter>CNN_forward</Filter>
     </ClInclude>
-    <ClInclude Include="CnnNet.h">
-      <Filter>头文件</Filter>
+    <ClInclude Include="..\..\..\..\..\github\CNN_forward\CNN_forward\CnnLayer.h">
+      <Filter>CNN_forward</Filter>
     </ClInclude>
-    <ClInclude Include="CnnAllLayers.h">
-      <Filter>头文件</Filter>
+    <ClInclude Include="..\..\..\..\..\github\CNN_forward\CNN_forward\CnnNet.h">
+      <Filter>CNN_forward</Filter>
     </ClInclude>
-    <ClInclude Include="Conv.h">
-      <Filter>头文件\Layers</Filter>
+    <ClInclude Include="..\..\..\..\..\github\CNN_forward\CNN_forward\Conv.h">
+      <Filter>CNN_forward</Filter>
     </ClInclude>
-    <ClInclude Include="Pooling.h">
-      <Filter>头文件\Layers</Filter>
+    <ClInclude Include="..\..\..\..\..\github\CNN_forward\CNN_forward\Dense.h">
+      <Filter>CNN_forward</Filter>
     </ClInclude>
-    <ClInclude Include="Relu.h">
-      <Filter>头文件\Layers</Filter>
+    <ClInclude Include="..\..\..\..\..\github\CNN_forward\CNN_forward\Input.h">
+      <Filter>CNN_forward</Filter>
     </ClInclude>
-    <ClInclude Include="Dense.h">
-      <Filter>头文件\Layers</Filter>
+    <ClInclude Include="..\..\..\..\..\github\CNN_forward\CNN_forward\LayerConfig.h">
+      <Filter>CNN_forward</Filter>
     </ClInclude>
-    <ClInclude Include="LayerConfig.h">
-      <Filter>头文件</Filter>
+    <ClInclude Include="..\..\..\..\..\github\CNN_forward\CNN_forward\ModelReader.h">
+      <Filter>CNN_forward</Filter>
     </ClInclude>
-    <ClInclude Include="Input.h">
-      <Filter>头文件\Layers</Filter>
+    <ClInclude Include="..\..\..\..\..\github\CNN_forward\CNN_forward\Pooling.h">
+      <Filter>CNN_forward</Filter>
     </ClInclude>
-    <ClInclude Include="ModelReader.h">
-      <Filter>头文件</Filter>
+    <ClInclude Include="..\..\..\..\..\github\CNN_forward\CNN_forward\Relu.h">
+      <Filter>CNN_forward</Filter>
     </ClInclude>
-    <ClInclude Include="utils.h">
-      <Filter>头文件</Filter>
+    <ClInclude Include="..\..\..\..\..\github\CNN_forward\CNN_forward\utils.h">
+      <Filter>CNN_forward</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="blowfish.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="Conv.cpp">
-      <Filter>源文件\Layers</Filter>
-    </ClCompile>
-    <ClCompile Include="Dense.cpp">
-      <Filter>源文件\Layers</Filter>
-    </ClCompile>
-    <ClCompile Include="Pooling.cpp">
-      <Filter>源文件\Layers</Filter>
-    </ClCompile>
-    <ClCompile Include="Relu.cpp">
-      <Filter>源文件\Layers</Filter>
-    </ClCompile>
-    <ClCompile Include="CnnNet.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="utils.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="Input.cpp">
-      <Filter>源文件\Layers</Filter>
-    </ClCompile>
-    <ClCompile Include="ModelReader.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="main.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
+    <None Include="..\..\..\..\..\github\CNN_forward\CNN_forward\model">
+      <Filter>CNN_forward</Filter>
+    </None>
+    <None Include="..\..\..\..\..\github\CNN_forward\CNN_forward\nViso_model">
+      <Filter>CNN_forward</Filter>
+    </None>
+    <None Include="..\..\..\..\..\github\CNN_forward\CNN_forward\test_output">
+      <Filter>CNN_forward</Filter>
+    </None>
   </ItemGroup>
 </Project>
