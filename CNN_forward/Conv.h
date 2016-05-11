@@ -12,6 +12,8 @@ public:
 	cv::Mat bias;
 	std::vector<std::vector<cv::Mat>> weight;
 	int dim[4];
+	// add the pad to support padding
+	int pad;
 	void forward(const std::vector<CnnLayer*>& structure);
 };
 
