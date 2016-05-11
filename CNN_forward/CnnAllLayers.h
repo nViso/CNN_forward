@@ -7,7 +7,7 @@ https://github.com/ihciah/CNN_forward
 #define __CnnAllLayer__
 
 /*
-引用CnnLayer基类以及各种Layer的头文件
+include all the head files
 */
 #include"CnnLayer.h"
 #include"Conv.h"

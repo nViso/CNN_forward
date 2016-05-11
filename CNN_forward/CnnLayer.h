@@ -15,8 +15,8 @@ https://github.com/ihciah/CNN_forward
 
 class CnnLayer{
 public:
-	std::vector<int> parents;//该层的上一层序号
-	std::vector<cv::Mat> result;//该层的输出结果
-	virtual void forward(const std::vector<CnnLayer*>& structure) = 0;//由子类实现前向计算，将输入计算得到结果存入result
+	std::vector<int> parents;//index of last layer
+	std::vector<cv::Mat> result;// result of this layer
+	virtual void forward(const std::vector<CnnLayer*>& structure) = 0;//implement forward and store the result to result
 };
 #endif
