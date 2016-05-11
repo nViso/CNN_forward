@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-# coding:utf-8
 #
 # Copyright 2015 By ihciah
 # https://github.com/ihciah/CNN_forward
@@ -68,23 +66,39 @@ class Convertor:
             self.output.write(struct.pack("i",0))
 
 
+if __name__=="__main__":
+    DEPLOY_PROTOTXT="/Users/weizheliu/Desktop/nViso/Caffe-mini/50x50_arch/deploy_trained_model.prototxt"
+    TRAINED_NET="/Users/weizheliu/Desktop/nViso/Caffe-mini/50x50_arch/trained_model_s4_iter_1317120.caffemodel"
+    OUTPUT_PATH = '/Users/weizheliu/Desktop/nViso/Caffe-mini/50x50_arch/nViso_model'
 
-DEPLOY_PROTOTXT="/home/ch/workspace/forward-test/type2/deploy.prototxt"
-TRAINED_NET="/home/ch/workspace/forward-test/new__iter_10000.caffemodel"
-
-net = caffe.Classifier(DEPLOY_PROTOTXT,TRAINED_NET)
-print net
-print list(net._layer_names)
-print net.layers[3].blobs[0].data.shape
-conv=Convertor("test_output",net)
-conv.write_data(0,"conv21")
-conv.write_data(3,"conv22")
-conv.write_data(6,"conv23")
-conv.write_data(10,"ip2a")
-conv.write_data(13,"ipfinala")
-
-#src="/home/ch/workspace/forward-test/1.jpg"
-#img=np.array(Image.open(src).convert('L'))
-#net.blobs['data'].data[0]=img/255.0
-#out = net.forward()
-#print 1
+    net = caffe.Classifier(DEPLOY_PROTOTXT,TRAINED_NET)
+    print net
+    print list(net._layer_names)
+    print net.layers[0].blobs[0].data.shape
+    conv=Convertor(OUTPUT_PATH,net)
+    conv.write_data(0,"conv0_1")
+    conv.write_data(2,"conv0_2")
+    conv.write_data(5,"conv1_1")
+    conv.write_data(7,"conv1_2")
+    conv.write_data(10,"conv2_1")
+    conv.write_data(12,"conv2_2")
+    conv.write_data(15,"conv3_1")
+    conv.write_data(17,"conv3_2")
+    conv.write_data(21,"ip0_1")
+    conv.write_data(23,"ip0_2")
+    conv.write_data(24,"ip1_1")
+    conv.write_data(26,"ip1_2")
+    conv.write_data(27,"ip2_1")
+    conv.write_data(29,"ip2_2")
+    conv.write_data(30,"ip3_1")
+    conv.write_data(32,"ip3_2")
+    conv.write_data(33,"ip4_1")
+    conv.write_data(35,"ip4_2")
+    conv.write_data(36,"ip5_1")
+    conv.write_data(38,"ip5_2")
+    conv.write_data(39,"ip6_1")
+    conv.write_data(41,"ip6_2")
+    conv.write_data(42,"ip7_1")
+    conv.write_data(44,"ip7_2")
+    conv.write_data(45,"ip8_1")
+    conv.write_data(47,"ip8_2")
