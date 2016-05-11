@@ -1,4 +1,4 @@
-/*
+ï»¿/*
 Copyright 2015 By ihciah
 https://github.com/ihciah/CNN_forward
 */
@@ -13,22 +13,25 @@ https://github.com/ihciah/CNN_forward
 #include "CnnAllLayers.h"
 #include "ModelReader.h"
 #include "LayerConfig.h"
+using namespace std;
 
 #define COLOR 1
 #define GRAY 0
 
-class CnnNet{
+class CnnNet {
 public:
-	std::vector<CnnLayer*> structure;//´æ·ÅCnnLayer×ÓÀàÖ¸Õë
+	std::vector<CnnLayer*> structure;//ï¿½ï¿½ï¿½ï¿½CnnLayerï¿½ï¿½ï¿½ï¿½Ö¸ï¿½ï¿½
 	Model* model;
 	void forward(const cv::Mat&);
-	void forward(const std::string path,int mode);
-	void init(std::string FilePath,std::string Key);//´´½¨Layer²¢¼ÓÔØÄ£ÐÍ²ÎÊýµ½LayerÀï
-	std::vector<int> argmax(const std::vector<int>& layer_nums);//´ÓÖ¸¶¨²ãºÅ¶ÁÈ¡½á¹û²¢·µ»Øargmax
-	std::vector<int> argmax();//´ÓnetÖÐ¶¨ÒåµÄ½á¹û²ã¶ÁÈ¡½á¹û²¢·µ»Øargmax
+	void forward(const std::string path, int mode);
+	void init(std::string FilePath, std::string Key);//ï¿½ï¿½ï¿½ï¿½Layerï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä£ï¿½Í²ï¿½ï¿½ï¿½ï¿½ï¿½Layerï¿½ï¿½
+	std::vector<int> argmax(const std::vector<int>& layer_nums);//ï¿½ï¿½Ö¸ï¿½ï¿½ï¿½ï¿½ï¿½Å¶ï¿½È¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½argmax
+	std::vector<int> argmax();//ï¿½ï¿½netï¿½Ð¶ï¿½ï¿½ï¿½ï¿½Ä½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½argmax
+	std::vector<vector<float> > face_info(const std::vector<int>& layer_nums);
+	std::vector<vector<float> > face_info();
 private:
-	void proc_layers(std::vector<LayerConfig*>);//ÓÉlayer_configÍê³ÉstructureµÄ³õÊ¼»¯²Ù×÷
-	std::vector<int> result_layer;//´æ·Å²úÉú½á¹ûµÄ²ãµÄÐòºÅ
+	void proc_layers(std::vector<LayerConfig*>);//ï¿½ï¿½layer_configï¿½ï¿½ï¿½ï¿½structureï¿½Ä³ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	std::vector<int> result_layer;//ï¿½ï¿½ï¿½Å²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 };
 
 #endif
