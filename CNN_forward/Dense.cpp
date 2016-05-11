@@ -3,11 +3,13 @@ Copyright 2015 By ihciah
 https://github.com/ihciah/CNN_forward
 */
 #include"Dense.h"
+#include<iostream>
 
 using namespace std;
 using namespace cv;
 
 void Dense::forward(const std::vector<CnnLayer*>& structure){
+
 	this->result.clear();
 	vector<Mat> input = structure[this->parents[0]]->result;
 	Mat input_vec(this->dim[1], 1, CV_32F);
@@ -17,11 +19,15 @@ void Dense::forward(const std::vector<CnnLayer*>& structure){
 			*input_vec_it = *j;
 		}
 	}
+	
 	for (int output_num = 0; output_num < this->dim[0]; output_num++){
 		Mat tmp(1, 1, CV_32F);
+		// put bias into tmp
 		tmp.setTo(this->bias.at<float>(output_num, 0));
+		// bias + weight*input vector
 		cv::add(tmp, this->weight[output_num][0] * input_vec, tmp);
 		//dim = [output, input_sum_count, 1, 1]; weight=dim[0]*1*Mat(1*dim[1]); bias=Mat(dim[0]*1)
 		this->result.push_back(tmp);
 	}
+
 }
