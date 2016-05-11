@@ -20,18 +20,18 @@ using namespace std;
 
 class CnnNet {
 public:
-	std::vector<CnnLayer*> structure;//����CnnLayer����ָ��
+	std::vector<CnnLayer*> structure;//store CnnLayer subclass pointer
 	Model* model;
 	void forward(const cv::Mat&);
 	void forward(const std::string path, int mode);
-	void init(std::string FilePath, std::string Key);//����Layer������ģ�Ͳ�����Layer��
-	std::vector<int> argmax(const std::vector<int>& layer_nums);//��ָ�����Ŷ�ȡ����������argmax
-	std::vector<int> argmax();//��net�ж����Ľ�������ȡ����������argmax
-	std::vector<vector<float> > face_info(const std::vector<int>& layer_nums);
+	void init(std::string FilePath, std::string Key);//make layer and load parameters to layers
+	std::vector<int> argmax(const std::vector<int>& layer_nums);//read value from corresponding layer index, return argmax
+	std::vector<int> argmax();//read result from this result layer and return argmax
+	std::vector<vector<float> > face_info(const std::vector<int>& layer_nums);// return result of facial information(nViso model)
 	std::vector<vector<float> > face_info();
 private:
-	void proc_layers(std::vector<LayerConfig*>);//��layer_config����structure�ĳ�ʼ������
-	std::vector<int> result_layer;//���Ų��������Ĳ�������
+	void proc_layers(std::vector<LayerConfig*>);//initialize structure by layer_config
+	std::vector<int> result_layer;//store the layer index of the result layer
 };
 
 #endif
