@@ -49,5 +49,5 @@ After this, choose Source Files in Solution Explorer, right click and add New Fi
 
 Now, you can build your own solution
 
- #### nViso Example
+#### nViso Example
 The nViso example just do a feed forward to get the landmarks and headposes, the output of 'ip0_2' is the corresponding facial landmarks, which are 32 pairs of float numbers
