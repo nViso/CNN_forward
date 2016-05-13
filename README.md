@@ -41,7 +41,7 @@ Before you can run it, you must do these things:
 
     add these flags to "Preprocessor Definitions":
 
-        _CRT_SECURE_NO_DEPRECATE
+        _SCL_SECURE_NO_WARNINGS
 
     one flag per line.
 
